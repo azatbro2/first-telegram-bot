@@ -3,11 +3,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
 # --- НАСТРОЙКИ ---
-TOKEN = "7805909443:AAF0OxG7CxENDnEJuP2lMRi1r_33ghkGL54"
-
 # Бесплатный публичный HTTPS-прокси (для теста)
 # ⚠️ такие прокси иногда "умирают", тогда надо будет заменить на другой
-PROXY_URL = "http://51.91.144.39:80"
 
 bot = Bot(token=TOKEN, proxy=PROXY_URL)
 dp = Dispatcher()
