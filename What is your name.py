@@ -23,6 +23,8 @@ import logging
 import random
 from io import BytesIO
 from typing import Dict, Any, List
+import os
+from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import Command
@@ -32,8 +34,9 @@ from aiogram.types import (
     BufferedInputFile, WebAppInfo,
 )
 
+load_dotenv()
 # ====== НАСТРОЙКИ ======
-API_TOKEN = "7805909443:AAF0OxG7CxENDnEJuP2lMRi1r_33ghkGL54"
+API_TOKEN = os.getenv("API_TOKEN")
 START_MONEY = 3000
 LOAN_PLUS = 1000
 LOAN_PAYBACK = 1500
@@ -49,7 +52,7 @@ START_OFFSETS = [100, 200, 300]  # насколько ниже реальной
 BID_TIMER_SEC = 10
 
 # URL рисовалки (HTTPS). Пример: "https://<твой_ngrok>.ngrok.io/draw"
-DRAW_WEBAPP_URL = "https://azatbro2.github.io/azat/"  # замени после запуска ngrok
+DRAW_WEBAPP_URL = os.getenv("DRAW_WEBAPP_URL")  
 
 # ====== ЛОГИ ======
 logging.basicConfig(level=logging.INFO)

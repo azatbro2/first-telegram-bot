@@ -1,6 +1,7 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
+import dotenv
 
 # --- НАСТРОЙКИ ---
 # Бесплатный публичный HTTPS-прокси (для теста)
@@ -9,6 +10,8 @@ from aiogram.filters import Command
 bot = Bot(token=TOKEN, proxy=PROXY_URL)
 dp = Dispatcher()
 
+TOKEN = dotenv.get_key(".env", "TOKEN")
+PROXY_URL = dotenv.get_key(".env", "PROXY_URL")
 
 @dp.message(Command("start"))
 async def start(message: types.Message):
